@@ -21,8 +21,8 @@ module-margin-right = 1
 font-0 = FiraCode Nerd Font:size=10;1
 
 modules-left = bspwm xwindow
-modules-center = spotify
-modules-right = date wlan speedtest cpu memory  pulseaudio
+modules-center = spotify cmus info-cava
+modules-right = date wlan speedtest cpu memory  pulseaudio 
 
 wm-restack = bspwm
 
@@ -72,7 +72,7 @@ label-empty =
 type = internal/network
 interface = enp34s0
 interval = 3.0
-format-connected = 直
+format-connected =  ETH
 format-disconnected = 睊%
 
 [module/date]
@@ -83,7 +83,7 @@ date = "%a %b %d"
 time = %H:%M
 
 format =  <label>
-label = %time% %date%
+label = %time%-%date%
 
 [module/cpu]
 type = internal/cpu
@@ -113,6 +113,24 @@ type = custom/script
 exec-if = hash speedtest
 exec = "/home/baptiste/.config/polybar/scripts/polybar-speedtest"  
 interval = 10
+
+[module/info-cava]
+type = custom/script
+exec = ~/.config/polybar/scripts/info-cava.py -f 24 -b 12 -e fffdfc,fffafe,ffeafa,ffc3d2 -c average
+tail = true
+
+[module/cmus]
+type = custom/script
+
+exec = ~/.config/polybar/scripts/cmus.sh
+exec-if = pgrep -x cmus
+interval = 1
+
+click-left = cmus-remote --pause
+scroll-down = cmus-remote --next
+scroll-up = cmus-remote --prev
+
+label-maxlen = 100
 
 [global/wm]
 margin-top = 5
