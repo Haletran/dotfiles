@@ -1,3 +1,5 @@
+# Install those packages
+
 * bspwm
 * picom
 * nano
