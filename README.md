@@ -17,8 +17,9 @@
 
 # Dotfiles
 
-> git clone https://github.com/Haletran/dotfiles
-
-> git clone https://github.com/Haletran/Wallpapers
-
-> git clone https://gitub.com/Haletran/Obsidian-documents
+```bash 
+# Clone those repositories
+git clone https://github.com/Haletran/dotfiles
+git clone https://github.com/Haletran/Wallpapers
+git clone https://gitub.com/Haletran/Obsidian-documents
+```
